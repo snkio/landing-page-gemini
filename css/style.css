@@ -4,7 +4,8 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
-  --margin-standart: 3rem;
+  --margin-small: 2rem;
+  --margin-medium: 3rem;
   --gap-medium: 1.5rem;
   --gap-large: 2rem;
   --color-vanilla: #e8e1ad;
@@ -86,7 +87,7 @@ span {
   font-size: 18px;
   display: flex;
   gap: 5px;
-  margin-right: var(--margin-standart);
+  margin-right: var(--margin-medium);
 }
 
 .header__google {
@@ -141,7 +142,7 @@ span {
   font-size: inherit;
 }
 
-.hero__chat {
+.btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +159,7 @@ span {
     border 0.3s ease-out;
 }
 
-.hero__chat:hover {
+.btn:hover {
   background: #fff;
   color: #000;
   border: 0.5px solid transparent;
@@ -193,4 +194,27 @@ span {
 
 .main__subtitle {
   font-size: 52px;
+}
+
+.main__elem {
+  position: relative;
+}
+
+.main__elem::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to right, #fff 50%, #1d73f3 100%);
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  transition: width 0.3s ease-out;
+}
+
+.main__elem:hover::after {
+  width: 100%;
+}
+
+.main__updates {
+  margin-top: var(--margin-small);
 }
