@@ -4,6 +4,7 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+  --fz-title: 3.5rem;
   --margin-small: 2rem;
   --margin-medium: 3rem;
   --gap-medium: 1.5rem;
@@ -22,13 +23,22 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: "Google Sans", sans-serif;
   background: #000;
   color: #fff;
   padding-inline: 1.25rem;
+  line-height: 1.5;
+}
+
+main {
+  position: relative;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 ul,
@@ -51,19 +61,10 @@ h3 {
   line-height: 1.2;
 }
 
-p,
-ul,
-ol,
-span {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.gradient__text {
+.hero__span {
   background: linear-gradient(to right, #1d73f3 20%, #ff985e 91%);
   background-clip: text;
   color: transparent;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -130,12 +131,13 @@ span {
   cursor: pointer;
 }
 
-.hero {
+.hero__container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
   text-align: center;
+  position: relative;
 }
 
 .hero h1 span {
@@ -168,10 +170,13 @@ span {
 .hero__nav {
   display: flex;
   justify-content: center;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-top: 5rem;
+  width: 100%;
+  align-self: flex-start;
+  padding-top: 5rem;
 }
 
 .main__list {
@@ -181,19 +186,6 @@ span {
   justify-content: center;
   background: var(--bg-gray);
   border-radius: 100px;
-}
-
-.ecosystem {
-  text-align: center;
-}
-
-.main__title {
-  font-size: 52px;
-  margin-bottom: 54px;
-}
-
-.main__subtitle {
-  font-size: 52px;
 }
 
 .main__elem {
@@ -215,6 +207,60 @@ span {
   width: 100%;
 }
 
-.main__updates {
+.ecosystem {
+  text-align: center;
+}
+
+.ecosystem__title {
+  font-size: var(--fz-title);
+  margin-bottom: var(--margin-medium);
+}
+
+.ecosystem__subtitle {
+  font-size: var(--fz-title);
+}
+
+.ecosystem__updates {
   margin-top: var(--margin-small);
+}
+
+.ecosystem__span {
+  background: linear-gradient(to right, #2a7af1 0%, #77a6ed 69%, #ffffff 100%);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: var(--fw-regular);
+}
+
+.era__container {
+  text-align: center;
+}
+
+.era__title {
+  font-size: 4.5rem;
+}
+
+.era__comment {
+  font-size: 1.25rem;
+  color: #909dac;
+  max-width: 700px;
+  margin-block: var(--margin-small);
+}
+
+.era__video {
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(209, 209, 209, 0.5);
+  border-radius: 24px;
+}
+
+.era__video svg {
+  cursor: pointer;
+  opacity: 100%;
 }
