@@ -79,9 +79,24 @@ h3 {
 }
 
 .header {
+  position: relative;
   padding: 1rem;
   display: flex;
   align-items: center;
+}
+
+.header__sphere {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 1px;
+  top: 0;
+  right: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 600px 500px #fff;
+  background: #fff;
+  opacity: 35%;
+  z-index: -1;
 }
 
 .header__logo {
